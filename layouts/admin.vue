@@ -1,6 +1,21 @@
 <script setup>
 const localePath = useLocalePath()
 const route = useRoute()
+const { user, logout, initAuth } = useAuth()
+
+// Initialize auth state
+onMounted(() => {
+  initAuth()
+})
+
+const handleLogout = async () => {
+  try {
+    await logout()
+    navigateTo(localePath('/admin/login'))
+  } catch (error) {
+    console.error('Logout failed:', error)
+  }
+}
 </script>
 
 <template>
@@ -94,10 +109,43 @@ const route = useRoute()
           </span>
         </NuxtLink>
       </nav>
-      <div class="p-4 border-t border-gray-700">
+      
+      <!-- User Info & Logout -->
+      <div class="border-t border-gray-700">
+        <div v-if="user" class="p-4">
+          <div class="flex items-center mb-3">
+            <!-- Avatar with fallback -->
+            <div class="w-10 h-10 rounded-full mr-3 flex-shrink-0 overflow-hidden bg-gray-600">
+              <img 
+                v-if="user.photoURL" 
+                :src="user.photoURL" 
+                class="w-full h-full object-cover" 
+                :alt="user.displayName || 'User'"
+                @error="$event.target.style.display='none'"
+              >
+              <!-- Blank avatar fallback -->
+              <svg v-if="!user.photoURL" class="w-full h-full text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm font-medium text-white truncate">{{ user.displayName || 'User' }}</p>
+              <p class="text-xs text-gray-400 truncate">{{ user.email }}</p>
+            </div>
+          </div>
+          <button
+            @click="handleLogout"
+            class="w-full py-2 px-4 bg-red-600 hover:bg-red-700 text-white rounded transition-colors duration-200 flex items-center justify-center"
+          >
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+            </svg>
+            Logout
+          </button>
+        </div>
         <NuxtLink 
           :to="localePath('/')" 
-          class="block py-2 px-4 rounded hover:bg-gray-700 text-gray-400 hover:text-white transition-colors duration-200"
+          class="block py-2 px-4 mx-4 mb-4 rounded hover:bg-gray-700 text-gray-400 hover:text-white transition-colors duration-200"
         >
           <span class="flex items-center">
             <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -115,3 +163,4 @@ const route = useRoute()
     </main>
   </div>
 </template>
+

@@ -3,7 +3,8 @@ import { ref, onMounted, computed } from 'vue'
 import { ref as storageRef, uploadBytes, getDownloadURL, listAll, deleteObject, getMetadata, updateMetadata } from 'firebase/storage'
 
 definePageMeta({
-  layout: 'admin'
+  layout: 'admin',
+  middleware: ['auth']
 })
 
 useHead({

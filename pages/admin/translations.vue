@@ -5,7 +5,8 @@ import enMessages from '~/i18n/locales/en.json'
 import thMessages from '~/i18n/locales/th.json'
 
 definePageMeta({
-  layout: 'admin'
+  layout: 'admin',
+  middleware: ['auth']
 })
 
 const { getLocaleMessage } = useI18n()
@@ -17,13 +18,17 @@ const editingTH = ref('')
 const showEditModal = ref(false)
 
 // Available pages
-const pages = ['homepage', 'about']
+const pages = ['homepage', 'about', 'work']
 
 // Get sections for a page
 const getSections = (page) => {
   const pageData = enMessages?.[page]
   if (!pageData || typeof pageData !== 'object') return []
-  return Object.keys(pageData).filter(key => key.startsWith('section'))
+  
+  // Return all keys that are objects (sections)
+  return Object.keys(pageData).filter(key => 
+    typeof pageData[key] === 'object' && pageData[key] !== null
+  )
 }
 
 // Get section content for both languages

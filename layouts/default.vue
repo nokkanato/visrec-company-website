@@ -161,7 +161,7 @@ useHead({
             <!-- Menu Content -->
             <nav class="mt-20 space-y-6">
               <NuxtLink 
-                :to="localePath('/')" 
+                :to="localePath('/work')" 
                 @click="toggleMenu"
                 class="block text-3xl font-bold hover:text-visrec-orange transition-colors"
                 :class="drawerTextClass"
@@ -259,7 +259,7 @@ useHead({
           <div>
             <h4 class="font-semibold mb-4 text-visrec-gray ">Navigation</h4>
             <div class="space-y-2 ">
-              <NuxtLink :to="localePath('/')" class="block text-gray-400 text-visrec-pearl hover:text-white  transition-colors">
+              <NuxtLink :to="localePath('/work')" class="block text-gray-400 text-visrec-pearl hover:text-white  transition-colors">
                 {{ $t('nav.work') }}
               </NuxtLink>
               <NuxtLink :to="localePath('/about')" class="block text-visrec-pearl text-gray-400 hover:text-white transition-colors">

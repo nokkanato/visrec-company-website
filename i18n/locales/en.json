@@ -75,5 +75,14 @@
                 "https://www.instagram.com/visrec"
             ]
         }
+    },
+    "work": {
+        "hero": {
+            "title": "Our Work",
+            "subtitle": "Crafting visual stories that inspire and engage"
+        },
+        "ui": {
+            "viewProject": "View Project"
+        }
     }
 }

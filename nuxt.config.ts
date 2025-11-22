@@ -31,6 +31,7 @@ export default defineNuxtConfig({
     }
   },
   runtimeConfig: {
+    geminiApiKey: process.env.GEMINI_API_KEY,
     public: {
       firebaseApiKey: process.env.FIREBASE_API_KEY,
       firebaseAuthDomain: process.env.FIREBASE_AUTH_DOMAIN,
