@@ -1,0 +1,8 @@
+node_modules
+.git
+.nuxt
+.output
+dist
+README.md
+deploy.sh
+.DS_Store
