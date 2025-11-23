@@ -24,6 +24,6 @@ gcloud run deploy $SERVICE_NAME \
   --platform managed \
   --region $REGION \
   --allow-unauthenticated \
-  --set-env-vars FIREBASE_API_KEY=AIzaSyA20tly8-CbtRc-vjWOVDoAvANi_1vaQvA,FIREBASE_AUTH_DOMAIN=visual-record.firebaseapp.com,FIREBASE_PROJECT_ID=visual-record,FIREBASE_STORAGE_BUCKET=visual-record.firebasestorage.app,FIREBASE_MESSAGING_SENDER_ID=724601136304,FIREBASE_APP_ID=1:724601136304:web:bf240cae5e9312b0974775
+  --set-env-vars NUXT_PUBLIC_FIREBASE_API_KEY=AIzaSyA20tly8-CbtRc-vjWOVDoAvANi_1vaQvA,NUXT_PUBLIC_FIREBASE_AUTH_DOMAIN=visual-record.firebaseapp.com,NUXT_PUBLIC_FIREBASE_PROJECT_ID=visual-record,NUXT_PUBLIC_FIREBASE_STORAGE_BUCKET=visual-record.firebasestorage.app,NUXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=724601136304,NUXT_PUBLIC_FIREBASE_APP_ID=1:724601136304:web:bf240cae5e9312b0974775
 
 echo "Deployment complete!"
