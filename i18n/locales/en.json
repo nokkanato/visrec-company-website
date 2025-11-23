@@ -1,88 +1,183 @@
 {
+  "homepage": {
+    "section1": {
+      "title": " comes from a bold new generation of filmmakers",
+      "description": "whose goal is to craft unique, surreal, and heartfelt works of art for our clients.",
+      "contact": "Contact us",
+      "services": "Our Services"
+    },
+    "section2": {
+      "title": "We’ve <span class=\"text-visrec-orange\"> worked</span> with such amazing people"
+    },
+    "section3": {
+      "title": " don’t just produce. We partner.",
+      "description": "From pre-production to post, VisRec embeds with your vision to tell stories that stick. We believe in creative risk, thoughtful detail, and human-first filmmaking. Let’s build your next story.",
+      "works": "See our works",
+      "contact": "Contact us"
+    }
+  },
+  "about": {
+    "section1": {
+      "title": "Introduction",
+      "description": "VisRec, which is Visual Records for short, is a Bangkok-based production company steered by a collective of young, astute and imaginative creatives with an unwavering commitment to creativity."
+    },
+    "section2": {
+      "title": "Our Team",
+      "h2": "Our Mission",
+      "p": "To create unique, surreal, and heartfelt works of art for our clients."
+    },
+    "section3": {
+      "title1": "Why",
+      "title2": "VisRec?",
+      "point1": "Our unique, third-culture approach infuses each project with a blend of both Thai and international perspectives, allowing us to create works that appeal to a vast variety of clients and audiences alike.",
+      "point2": "Regardless of whether the project is big or small, we commit to maximizing the value of any budget, ensuring the best possible outcomes for our clients.",
+      "point3": "We excel at completing projects swiftly, without compromising on quality."
+    },
+    "section4": {
+      "h2": "Get in Touch",
+      "p": "Ready to start your next project? Let's talk.",
+      "button": "Contact Us"
+    }
+  },
+  "nav": {
+    "work": "Work",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "footer": {
+    "rights": "© 2024 VisRec Studio. All rights reserved.",
+    "email": "sattamate{'@'}visrec.studio"
+  },
+  "seo": {
     "homepage": {
-        "section1": {
-            "title": " comes from a bold new generation of filmmakers,",
-            "description": "whose goal is to craft unique, surreal, and heartfelt works of art for our clients.",
-            "contact": "Contact us",
-            "services": "Our Services"
-        },
-        "section2": {
-            "title": "We’ve <span class=\"text-visrec-orange\"> worked</span> with such amazing people"
-        },
-        "section3": {
-            "title": " don’t just produce. We partner.",
-            "description": "From pre-production to post, VisRec embeds with your vision to tell stories that stick. We believe in creative risk, thoughtful detail, and human-first filmmaking. Let’s build your next story.",
-            "works": "See our works",
-            "contact": "Contact us"
-        }
+      "title": "VisRec Studio - Bangkok Film Production Company",
+      "description": "VisRec is a Bangkok-based production company creating unique, surreal, and heartfelt visual stories. Bold filmmakers crafting exceptional content for clients worldwide.",
+      "keywords": "film production Bangkok, video production Thailand, creative filmmaking, visual storytelling, production company Bangkok"
     },
     "about": {
-        "section1": {
-            "title": "Introduction",
-            "description": "VisRec, which is Visual Records for short, is a Bangkok-based production company steered by a collective of young, astute and imaginative creatives with an unwavering commitment to creativity."
-        },
-        "section2": {
-            "title": "Our Team",
-            "h2": "Our Mission",
-            "p": "To create unique, surreal, and heartfelt works of art for our clients."
-        },
-        "section3": {
-            "title1": "Why",
-            "title2": "VisRec?",
-            "point1": "Our unique, third-culture approach infuses each project with a blend of both Thai and international perspectives, allowing us to create works that appeal to a vast variety of clients and audiences alike.",
-            "point2": "Regardless of whether the project is big or small, we commit to maximizing the value of any budget, ensuring the best possible outcomes for our clients.",
-            "point3": "We excel at completing projects swiftly, without compromising on quality."
-        },
-        "section4": {
-            "h2": "Get in Touch",
-            "p": "Ready to start your next project? Let's talk.",
-            "button": "Contact Us"
-        }
+      "title": "About VisRec - Creative Film Production Team in Bangkok",
+      "description": "Meet the VisRec team - young, imaginative creatives with a third-culture approach. We blend Thai and international perspectives to create exceptional visual content.",
+      "keywords": "about VisRec, film production team, Bangkok creatives, video production company, third-culture filmmaking"
     },
-    "nav": {
-        "work": "Work",
-        "about": "About",
-        "contact": "Contact"
-    },
-    "footer": {
-        "rights": "© 2024 VisRec Studio. All rights reserved.",
-        "email": "sattamate{'@'}visrec.studio"
-    },
-    "seo": {
-        "homepage": {
-            "title": "VisRec Studio - Bangkok Film Production Company",
-            "description": "VisRec is a Bangkok-based production company creating unique, surreal, and heartfelt visual stories. Bold filmmakers crafting exceptional content for clients worldwide.",
-            "keywords": "film production Bangkok, video production Thailand, creative filmmaking, visual storytelling, production company Bangkok"
-        },
-        "about": {
-            "title": "About VisRec - Creative Film Production Team in Bangkok",
-            "description": "Meet the VisRec team - young, imaginative creatives with a third-culture approach. We blend Thai and international perspectives to create exceptional visual content.",
-            "keywords": "about VisRec, film production team, Bangkok creatives, video production company, third-culture filmmaking"
-        },
-        "organization": {
-            "name": "VisRec Studio",
-            "legalName": "Visual Records Co., Ltd.",
-            "description": "Bangkok-based production company creating unique visual stories",
-            "url": "https://visrec.studio",
-            "logo": "https://visrec.studio/assets/logo/vrblack.svg",
-            "email": "sattamate{'@'}visrec.studio",
-            "address": {
-                "city": "Bangkok",
-                "country": "Thailand"
-            },
-            "sameAs": [
-                "https://www.facebook.com/visrec.studio",
-                "https://www.instagram.com/visrec"
-            ]
-        }
-    },
-    "work": {
-        "hero": {
-            "title": "Our Work",
-            "subtitle": "Crafting visual stories that inspire and engage"
-        },
-        "ui": {
-            "viewProject": "View Project"
-        }
+    "organization": {
+      "name": "VisRec Studio",
+      "legalName": "Visual Records Co., Ltd.",
+      "description": "Bangkok-based production company creating unique visual stories",
+      "url": "https://visrec.studio",
+      "logo": "https://visrec.studio/assets/logo/vrblack.svg",
+      "email": "sattamate{'@'}visrec.studio",
+      "address": {
+        "city": "Bangkok",
+        "country": "Thailand"
+      },
+      "sameAs": [
+        "https://www.facebook.com/visrec.studio",
+        "https://www.instagram.com/visrec"
+      ]
     }
+  },
+  "work": {
+    "hero": {
+      "title": "Our Work",
+      "subtitle": "Crafting visual stories that inspire and engage"
+    },
+    "ui": {
+      "viewProject": "View Project"
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "Our Services",
+      "subtitle": "Comprehensive production solutions tailored to your vision."
+    },
+    "scope": {
+      "title": "Scope of Works",
+      "step1": {
+        "title": "Development",
+        "desc": "Storyboarding and mood and tone pitching"
+      },
+      "step2": {
+        "title": "Pre-Production",
+        "desc": "Scout Location, casting, props hunting and art decoration."
+      },
+      "step3": {
+        "title": "Production",
+        "desc": "Shooting"
+      },
+      "step4": {
+        "title": "Post-Production",
+        "desc": "Editing, color grading, sound mastering, VTR, and CGI"
+      }
+    },
+    "overview": {
+      "title": "Services Overview",
+      "cat1": {
+        "title": "FULL SCALE PRODUCTIONS",
+        "item1": "Commercials",
+        "sub1_1": "Photography",
+        "sub1_2": "Video Productions",
+        "item2": "Music Video Productions"
+      },
+      "cat2": {
+        "title": "PRODUCTION SERVICE",
+        "item1": "International Client Service"
+      },
+      "cat3": {
+        "title": "CONTENT PRODUCTIONS",
+        "item1": "Shortform (Instagram reels, Tiktok, etc.)",
+        "item2": "Behind the scenes",
+        "item3": "Live session",
+        "item4": "Product Reviews"
+      },
+      "cat4": {
+        "title": "CORPORATE PRODUCTIONS",
+        "item1": "Company Profiles",
+        "item2": "CSR Events",
+        "item3": "Interview Videos",
+        "item4": "Event Shooting"
+      },
+      "cat5": {
+        "title": "POST-PRODUCTION SERVICES",
+        "item1": "Video Full Service - Editing, Color grading, VTR, Sound Mixing.",
+        "item2": "Photography Full Service - Photo Retouching, Color grading."
+      },
+      "cat6": {
+        "title": "OTHER SERVICES",
+        "item1": "Screenwriting Services",
+        "item2": "Director",
+        "item3": "Cinematographer"
+      }
+    },
+    "cta": {
+      "title": "Ready to start your project?",
+      "button": "Contact Us"
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact - VisRec Studio",
+      "description": "Get in touch with VisRec Studio for your next video production project."
+    },
+    "header": {
+      "title": "Let's Talk",
+      "subtitle": "Have a project in mind? We'd love to hear from you."
+    },
+    "info": {
+      "title": "Contact Details",
+      "address": "Bangkok, Thailand",
+      "follow": "Follow Us"
+    },
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your Name",
+      "email": "Email",
+      "emailPlaceholder": "your{'@'}email.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "Project Inquiry",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your project...",
+      "button": "Send Message"
+    }
+  }
 }

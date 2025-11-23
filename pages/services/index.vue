@@ -1,5 +1,8 @@
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, computed } from 'vue'
+
+const { t } = useI18n()
+const localePath = useLocalePath()
 
 // Custom directive for scroll animations (reused from work page)
 const vAnimateOnScroll = {
@@ -27,93 +30,93 @@ const vAnimateOnScroll = {
   }
 }
 
-const scopeOfWorks = [
+const scopeOfWorks = computed(() => [
   {
     id: '01',
-    title: 'Development',
-    description: 'Storyboarding and mood and tone pitching'
+    title: t('services.scope.step1.title'),
+    description: t('services.scope.step1.desc')
   },
   {
     id: '02',
-    title: 'Pre-Production',
-    description: 'Scout Location, casting, props hunting and art decoration.'
+    title: t('services.scope.step2.title'),
+    description: t('services.scope.step2.desc')
   },
   {
     id: '03',
-    title: 'Production',
-    description: 'Shooting'
+    title: t('services.scope.step3.title'),
+    description: t('services.scope.step3.desc')
   },
   {
     id: '04',
-    title: 'Post-Production',
-    description: 'Editing, color grading, sound mastering, VTR, and CGI'
+    title: t('services.scope.step4.title'),
+    description: t('services.scope.step4.desc')
   }
-]
+])
 
-const services = [
+const services = computed(() => [
   {
     id: '01',
-    title: 'FULL SCALE PRODUCTIONS',
+    title: t('services.overview.cat1.title'),
     items: [
       {
-        label: 'Commercials',
-        subItems: ['Photography', 'Video Productions']
+        label: t('services.overview.cat1.item1'),
+        subItems: [t('services.overview.cat1.sub1_1'), t('services.overview.cat1.sub1_2')]
       },
       {
-        label: 'Music Video Productions'
+        label: t('services.overview.cat1.item2')
       }
     ]
   },
   {
     id: '02',
-    title: 'PRODUCTION SERVICE',
+    title: t('services.overview.cat2.title'),
     items: [
-      { label: 'International Client Service' }
+      { label: t('services.overview.cat2.item1') }
     ]
   },
   {
     id: '03',
-    title: 'CONTENT PRODUCTIONS',
+    title: t('services.overview.cat3.title'),
     items: [
-      { label: 'Shortform (Instagram reels, Tiktok, etc.)' },
-      { label: 'Behind the scenes' },
-      { label: 'Live session' },
-      { label: 'Product Reviews' }
+      { label: t('services.overview.cat3.item1') },
+      { label: t('services.overview.cat3.item2') },
+      { label: t('services.overview.cat3.item3') },
+      { label: t('services.overview.cat3.item4') }
     ]
   },
   {
     id: '04',
-    title: 'CORPORATE PRODUCTIONS',
+    title: t('services.overview.cat4.title'),
     items: [
-      { label: 'Company Profiles' },
-      { label: 'CSR Events' },
-      { label: 'Interview Videos' },
-      { label: 'Event Shooting' }
+      { label: t('services.overview.cat4.item1') },
+      { label: t('services.overview.cat4.item2') },
+      { label: t('services.overview.cat4.item3') },
+      { label: t('services.overview.cat4.item4') }
     ]
   },
   {
     id: '05',
-    title: 'POST-PRODUCTION SERVICES',
+    title: t('services.overview.cat5.title'),
     items: [
-      { label: 'Video Full Service - Editing, Color grading, VTR, Sound Mixing.' },
-      { label: 'Photography Full Service - Photo Retouching, Color grading.' }
+      { label: t('services.overview.cat5.item1') },
+      { label: t('services.overview.cat5.item2') }
     ]
   },
   {
     id: '06',
-    title: 'OTHER SERVICES',
+    title: t('services.overview.cat6.title'),
     items: [
-      { label: 'Screenwriting Services' },
-      { label: 'Director' },
-      { label: 'Cinematographer' }
+      { label: t('services.overview.cat6.item1') },
+      { label: t('services.overview.cat6.item2') },
+      { label: t('services.overview.cat6.item3') }
     ]
   }
-]
+])
 
 useHead({
-  title: 'Services - VisRec Studio',
+  title: t('services.hero.title') + ' - VisRec Studio',
   meta: [
-    { name: 'description', content: 'Explore our full range of production services, from development to post-production.' }
+    { name: 'description', content: t('services.hero.subtitle') }
   ]
 })
 </script>
@@ -127,13 +130,13 @@ useHead({
           v-animate-on-scroll="0"
           class="text-6xl md:text-8xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-visrec-orange to-orange-300"
         >
-          Our Services
+          {{ $t('services.hero.title') }}
         </h1>
         <p 
           v-animate-on-scroll="200"
           class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto"
         >
-          Comprehensive production solutions tailored to your vision.
+          {{ $t('services.hero.subtitle') }}
         </p>
       </div>
 
@@ -149,7 +152,7 @@ useHead({
           v-animate-on-scroll="0"
           class="text-4xl md:text-5xl font-bold text-visrec-orange mb-16 text-center uppercase tracking-wide"
         >
-          Scope of Works
+          {{ $t('services.scope.title') }}
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
@@ -182,7 +185,7 @@ useHead({
         v-animate-on-scroll="0"
         class="text-4xl md:text-5xl font-bold text-visrec-orange mb-16 text-center uppercase tracking-wide"
       >
-        Services Overview
+        {{ $t('services.overview.title') }}
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -216,12 +219,12 @@ useHead({
     <!-- CTA -->
     <section class="py-20 text-center">
       <div v-animate-on-scroll="0">
-        <h2 class="text-3xl font-bold mb-8">Ready to start your project?</h2>
+        <h2 class="text-3xl font-bold mb-8">{{ $t('services.cta.title') }}</h2>
         <NuxtLink 
-          to="/contact" 
+          :to="localePath('/contact')" 
           class="inline-block bg-visrec-orange text-visrec-pearl px-10 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-visrec-orange transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
         >
-          Contact Us
+          {{ $t('services.cta.button') }}
         </NuxtLink>
       </div>
     </section>

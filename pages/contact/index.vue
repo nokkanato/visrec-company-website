@@ -1,10 +1,12 @@
 <script setup>
 import { ref } from 'vue'
 
+const { t, locale } = useI18n()
+
 useHead({
-  title: 'Contact - VisRec Studio',
+  title: t('contact.meta.title'),
   meta: [
-    { name: 'description', content: 'Get in touch with VisRec Studio for your next video production project.' }
+    { name: 'description', content: t('contact.meta.description') }
   ]
 })
 
@@ -51,13 +53,14 @@ const vAnimateOnScroll = {
           v-animate-on-scroll="0"
           class="text-5xl md:text-7xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-visrec-orange to-white"
         >
-          Let's Talk
+          {{ $t('contact.header.title') }}
         </h1>
         <p 
           v-animate-on-scroll="200"
           class="text-xl text-gray-400 max-w-2xl mx-auto"
+          :class="locale === 'th' ? 'pt-2 md:pt-4' : 'md:pt-2'"
         >
-          Have a project in mind? We'd love to hear from you.
+          {{ $t('contact.header.subtitle') }}
         </p>
       </div>
 
@@ -66,7 +69,7 @@ const vAnimateOnScroll = {
         <!-- Contact Info -->
         <div v-animate-on-scroll="300" class="space-y-12">
           <div>
-            <h3 class="text-2xl font-bold text-visrec-orange mb-4">Contact Details</h3>
+            <h3 class="text-2xl font-bold text-visrec-orange mb-4">{{ $t('contact.info.title') }}</h3>
             <div class="space-y-4 text-lg text-gray-300">
               <p class="flex items-center gap-3">
                 <svg class="w-6 h-6 text-visrec-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
@@ -74,13 +77,13 @@ const vAnimateOnScroll = {
               </p>
               <p class="flex items-center gap-3">
                 <svg class="w-6 h-6 text-visrec-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                <span>Bangkok, Thailand</span>
+                <span>{{ $t('contact.info.address') }}</span>
               </p>
             </div>
           </div>
 
           <div>
-            <h3 class="text-2xl font-bold text-visrec-orange mb-4">Follow Us</h3>
+            <h3 class="text-2xl font-bold text-visrec-orange mb-4">{{ $t('contact.info.follow') }}</h3>
             <div class="flex gap-6">
               <a href="https://www.facebook.com/visrec.studio" target="_blank" class="w-12 h-12 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-visrec-orange hover:text-white transition-all duration-300">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -96,46 +99,46 @@ const vAnimateOnScroll = {
         <div v-animate-on-scroll="400" class="bg-white bg-opacity-5 p-8 rounded-2xl border border-white border-opacity-10">
           <form @submit.prevent="handleSubmit" class="space-y-6">
             <div>
-              <label class="block text-sm font-medium text-gray-400 mb-2">Name</label>
+              <label class="block text-sm font-medium text-gray-400 mb-2">{{ $t('contact.form.name') }}</label>
               <input 
                 v-model="form.name"
                 type="text" 
                 required
                 class="w-full bg-black bg-opacity-30 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-visrec-orange focus:ring-1 focus:ring-visrec-orange transition-colors"
-                placeholder="Your Name"
+                :placeholder="$t('contact.form.namePlaceholder')"
               >
             </div>
             
             <div>
-              <label class="block text-sm font-medium text-gray-400 mb-2">Email</label>
+              <label class="block text-sm font-medium text-gray-400 mb-2">{{ $t('contact.form.email') }}</label>
               <input 
                 v-model="form.email"
                 type="email" 
                 required
                 class="w-full bg-black bg-opacity-30 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-visrec-orange focus:ring-1 focus:ring-visrec-orange transition-colors"
-                placeholder="your@email.com"
+                :placeholder="$t('contact.form.emailPlaceholder')"
               >
             </div>
 
             <div>
-              <label class="block text-sm font-medium text-gray-400 mb-2">Subject</label>
+              <label class="block text-sm font-medium text-gray-400 mb-2">{{ $t('contact.form.subject') }}</label>
               <input 
                 v-model="form.subject"
                 type="text" 
                 required
                 class="w-full bg-black bg-opacity-30 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-visrec-orange focus:ring-1 focus:ring-visrec-orange transition-colors"
-                placeholder="Project Inquiry"
+                :placeholder="$t('contact.form.subjectPlaceholder')"
               >
             </div>
 
             <div>
-              <label class="block text-sm font-medium text-gray-400 mb-2">Message</label>
+              <label class="block text-sm font-medium text-gray-400 mb-2">{{ $t('contact.form.message') }}</label>
               <textarea 
                 v-model="form.message"
                 rows="4" 
                 required
                 class="w-full bg-black bg-opacity-30 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-visrec-orange focus:ring-1 focus:ring-visrec-orange transition-colors"
-                placeholder="Tell us about your project..."
+                :placeholder="$t('contact.form.messagePlaceholder')"
               ></textarea>
             </div>
 
@@ -143,7 +146,7 @@ const vAnimateOnScroll = {
               type="submit"
               class="w-full bg-visrec-orange text-white font-bold py-4 rounded-lg hover:bg-white hover:text-visrec-orange transition-all duration-300 shadow-lg transform hover:-translate-y-1"
             >
-              Send Message
+              {{ $t('contact.form.button') }}
             </button>
           </form>
         </div>
