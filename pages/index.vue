@@ -1,8 +1,10 @@
 <script setup>
+const { t } = useI18n()
 useHead({
-  title: 'VisRec Studio - Filmmakers & Creative Partners',
+  title: t('seo.homepage.title'),
   meta: [
-    { name: 'description', content: 'VisRec Studio - Creative filmmakers and production partners' }
+    { name: 'description', content: t('seo.homepage.description') },
+    { name: 'keywords', content: t('seo.homepage.keywords') }
   ]
 })
 

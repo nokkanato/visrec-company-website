@@ -50,39 +50,38 @@ const drawerTextClass = computed(() => {
   }
   return 'text-white'
 })
-// Determine SEO key based on route
-const seoKey = route.path === '/' ? 'homepage' : route.path.includes('/about') ? 'about' : 'homepage'
-const seoData = t(`seo.${seoKey}`)
-const organization = t('seo.organization') || { address: {} }
+// Organization Schema (Global)
+const organizationSchema = computed(() => ({
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: t('seo.organization.name'),
+  legalName: t('seo.organization.legalName'),
+  url: t('seo.organization.url'),
+  logo: t('seo.organization.logo'),
+  sameAs: [
+    'https://www.facebook.com/visrec.studio',
+    'https://www.instagram.com/visrec'
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: t('seo.organization.email'),
+    contactType: 'customer service',
+    areaServed: 'TH',
+    availableLanguage: ['en', 'th']
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: t('seo.organization.address.city'),
+    addressCountry: t('seo.organization.address.country')
+  },
+  description: t('seo.organization.description')
+}))
 
 useHead({
-  title: seoData.title,
-  meta: [
-    { name: 'description', content: seoData.description },
-    { name: 'keywords', content: seoData.keywords }
-  ],
   script: [
     {
       type: 'application/ld+json',
-      children: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'Organization',
-        name: organization.name,
-        legalName: organization.legalName,
-        url: organization.url,
-        logo: organization.logo,
-        sameAs: organization.sameAs,
-        contactPoint: {
-          '@type': 'ContactPoint',
-          email: organization.email,
-          address: {
-            '@type': 'PostalAddress',
-            addressLocality: organization?.address?.city ?? '',
-            addressCountry: organization?.address?.country ?? ''
-          }
-        },
-        description: organization.description
-      })
+      children: JSON.stringify(organizationSchema.value)
     }
   ]
 })
@@ -169,6 +168,14 @@ useHead({
                 {{ $t('nav.work') }}
               </NuxtLink>
               <NuxtLink 
+                :to="localePath('/services')" 
+                @click="toggleMenu"
+                class="block text-3xl font-bold hover:text-visrec-orange transition-colors"
+                :class="drawerTextClass"
+              >
+                Services
+              </NuxtLink>
+              <NuxtLink 
                 :to="localePath('/about')" 
                 @click="toggleMenu"
                 class="block text-3xl font-bold hover:text-visrec-orange transition-colors"
@@ -177,7 +184,7 @@ useHead({
                 {{ $t('nav.about') }}
               </NuxtLink>
               <NuxtLink 
-                :to="localePath('/')" 
+                :to="localePath('/contact')" 
                 @click="toggleMenu"
                 class="block text-3xl font-bold hover:text-visrec-orange transition-colors"
                 :class="drawerTextClass"
@@ -262,10 +269,13 @@ useHead({
               <NuxtLink :to="localePath('/work')" class="block text-gray-400 text-visrec-pearl hover:text-white  transition-colors">
                 {{ $t('nav.work') }}
               </NuxtLink>
+              <NuxtLink :to="localePath('/services')" class="block text-gray-400 text-visrec-pearl hover:text-white  transition-colors">
+                Services
+              </NuxtLink>
               <NuxtLink :to="localePath('/about')" class="block text-visrec-pearl text-gray-400 hover:text-white transition-colors">
                 {{ $t('nav.about') }}
               </NuxtLink>
-              <NuxtLink :to="localePath('/')" class="block text-visrec-pearl text-gray-400 hover:text-white transition-colors">
+              <NuxtLink :to="localePath('/contact')" class="block text-visrec-pearl text-gray-400 hover:text-white transition-colors">
                 {{ $t('nav.contact') }}
               </NuxtLink>
             </div>
